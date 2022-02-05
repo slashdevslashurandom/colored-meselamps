@@ -32,75 +32,75 @@ for i = 1, #dyes do
 		paramtype = "light",
 		sunlight_propagates = true,
 		is_ground_content = false,
-		groups = {cracky = 3, oddly_breakable_by_hand = 3, cmeselamps = 1},
+		groups = {cracky = 3, oddly_breakable_by_hand = 3, colored_meselamps = 1},
 		sounds = default.node_sound_glass_defaults(),
 		light_source = l_value}
 
-	minetest.register_node("cmeselamps:" .. name .. "_meselamp", def )
+	minetest.register_node("colored_meselamps:" .. name .. "_meselamp", def )
 
 	if (craft == true) then
 
 		minetest.register_craft{
 			type = "shapeless",
-			output = "cmeselamps:" .. name .. "_meselamp",
+			output = "colored_meselamps:" .. name .. "_meselamp",
 			recipe = {"group:dye,color_" .. name, "default:meselamp"},
 		}
 
 		minetest.register_craft{
 			type = "shapeless",
-			output = "cmeselamps:" .. name .. "_meselamp",
-			recipe = {"group:dye,color_" .. name, "group:cmeselamps"},
+			output = "colored_meselamps:" .. name .. "_meselamp",
+			recipe = {"group:dye,color_" .. name, "group:colored_meselamps"},
 		}
 
 
 	end
 
-	def.groups["cmeselamps"] = 0
-	-- slopes and slabs do _not_ get to be in the cmeselamps group, because
+	def.groups["colored_meselamps"] = 0
+	-- slopes and slabs do _not_ get to be in the colored_meselamps group, because
 	-- otherwise it would be possible to create a full cmeselamp out of a small slab
 
 	if stairsplus_mod then
-		stairsplus:register_all("cmeselamps", "" .. name .. "_meselamp", "cmeselamps:" .. name .. "_meselamp", def)
+		stairsplus:register_all("colored_meselamps", "" .. name .. "_meselamp", "colored_meselamps:" .. name .. "_meselamp", def)
 	end
 end
 
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:dark_blue_meselamp",
+	output = "colored_meselamps:dark_blue_meselamp",
 	recipe = {"group:dye,color_black", "group:dye,color_blue", "default:meselamp"},
 }
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:dark_red_meselamp",
+	output = "colored_meselamps:dark_red_meselamp",
 	recipe = {"group:dye,color_black", "group:dye,color_red", "default:meselamp"},
 }
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:lime_meselamp",
+	output = "colored_meselamps:lime_meselamp",
 	recipe = {"group:dye,color_yellow", "group:dye,color_green", "default:meselamp"},
 }
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:turquoise_meselamp",
+	output = "colored_meselamps:turquoise_meselamp",
 	recipe = {"group:dye,color_green", "group:dye,color_cyan", "default:meselamp"},
 }
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:dark_blue_meselamp",
-	recipe = {"group:dye,color_black", "group:dye,color_blue", "group:cmeselamps"},
+	output = "colored_meselamps:dark_blue_meselamp",
+	recipe = {"group:dye,color_black", "group:dye,color_blue", "group:colored_meselamps"},
 }
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:dark_red_meselamp",
-	recipe = {"group:dye,color_black", "group:dye,color_red", "group:cmeselamps"},
+	output = "colored_meselamps:dark_red_meselamp",
+	recipe = {"group:dye,color_black", "group:dye,color_red", "group:colored_meselamps"},
 }
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:lime_meselamp",
-	recipe = {"group:dye,color_yellow", "group:dye,color_green", "group:cmeselamps"},
+	output = "colored_meselamps:lime_meselamp",
+	recipe = {"group:dye,color_yellow", "group:dye,color_green", "group:colored_meselamps"},
 }
 minetest.register_craft{
 	type = "shapeless",
-	output = "cmeselamps:turquoise_meselamp",
-	recipe = {"group:dye,color_green", "group:dye,color_cyan", "group:cmeselamps"},
+	output = "colored_meselamps:turquoise_meselamp",
+	recipe = {"group:dye,color_green", "group:dye,color_cyan", "group:colored_meselamps"},
 }
